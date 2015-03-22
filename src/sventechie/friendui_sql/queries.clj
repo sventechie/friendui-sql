@@ -2,13 +2,6 @@
   (:require [korma.core :refer :all]
             [korma.db :refer [with-db]]))
 
-(def db-map {:db "crossroads_store_test"
-             :user "clojure_test"
-             :password "clojure_test"
-             :host "localhost"
-             :port "3306"
-             :delimiters "`"})
-
 (declare users user-details roles linked-oauth-accounts permissions)
 
 (defentity users
