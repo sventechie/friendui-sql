@@ -28,7 +28,7 @@ CREATE TABLE "azn_account" (
 );
 
 -- Set default user role = admin
-INSERT INTO `azn_account` (`id`, `role_id`, `email_address`, `created_on`, `password`, `verify_uuid`)
+INSERT INTO "azn_account" ("id", "role_id", "email_address", "created_on", "password", "verify_uuid")
 VALUES (1, 1, 'user@email.com', NOW(), uuid_in(md5(now()::text)::cstring), uuid_in(md5(now()::text)::cstring));
 
 CREATE TABLE "azn_account_details" (
@@ -51,8 +51,8 @@ CREATE TABLE "azn_acl_permission" (
     PRIMARY KEY ("id")
 );
 
--- data for table `azn_acl_permission`
-INSERT INTO `azn_acl_permission` (`key`, `description`, `is_system`) VALUES
+-- data for table "azn_acl_permission"
+INSERT INTO "azn_acl_permission" ("key", "description", "is_system") VALUES
 ('create_roles', 'Create new roles', 1),
 ('retrieve_roles', 'View existing roles', 1),
 ('update_roles', 'Update existing roles', 1),
@@ -78,8 +78,8 @@ CREATE TABLE "azn_acl_role" (
     UNIQUE ("name")
 );
 
--- data for table `azn_acl_role`
-INSERT INTO `azn_acl_role` (`name`, `description`, `is_system`) VALUES
+-- data for table "azn_acl_role"
+INSERT INTO "azn_acl_role" ("name", "description", "is_system") VALUES
 ('user/admin', 'Website Administrator', 1),
 ('user/free', 'Website user', 0);
 
@@ -113,8 +113,8 @@ CREATE TABLE "azn_rel_role_permission" (
 );
 
 -- Giving the Admin role (1) all permissions
-INSERT INTO `azn_rel_role_permission` (`role_id`, `permission_id`)
-SELECT 1, `id` FROM `azn_acl_permission`;
+INSERT INTO "azn_rel_role_permission" ("role_id", "permission_id")
+SELECT 1, "id" FROM "azn_acl_permission";
 
 -- Post-data save --
 COMMIT;
