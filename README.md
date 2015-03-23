@@ -4,7 +4,7 @@ A Clojure library designed to store account information for Clojure Friend in an
 This is an implementation of the storage protocol in [friend-ui](https://github.com/sveri/friend-ui/) with SQL
 (it was tied to Datomic originally).
 
-This library is based on the SQL Korma abstraction - a schema file is provided for MySQL/Percona/MariaDB and PostgreSQL.
+This library is based on the SQL Korma abstraction layer - a schema file is provided for MySQL/Percona/MariaDB and PostgreSQL.
 With the correct parameters (and customized schema), it should also work with Oracle, Microsoft SQL Server,
 FirbirdSQL, SQLite3, H2, Vertica and ODBC databases. Pull requests are welcome.
 
@@ -27,7 +27,7 @@ Load the `schema.sql` file from resources into your database. It creates tables 
 
 This library is not yet available on Clojars, so you'll need to clone the repo and `lein install`.
 
-See [friendui-mysql-example](https://github.com/sventechie/friendui-sql-example) for a working example.
+See [friendui-sql-example](https://github.com/sventechie/friendui-sql-example) for a working example.
 
 ## License
 
