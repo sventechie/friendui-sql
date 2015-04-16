@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `azn_account` (
   UNIQUE KEY `email_address` (`email_address`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=1 ;
 
-Set default user role = admin
+-- Set default user role = admin
 INSERT INTO `azn_account` (`id`, `role_id`, `email_address`, `created_on`, `password`, `verify_uuid`)
 VALUES (1, 1, 'user@email.com', NOW(), UUID(), UUID());
 
