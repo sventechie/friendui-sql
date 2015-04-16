@@ -11,6 +11,8 @@ FirbirdSQL, SQLite3, H2, Vertica and ODBC databases. Pull requests are welcome.
 
 ## Usage
 
+This library is not yet available on Clojars, so you'll need to `clone` the repo and `lein install`.
+
 `[sventechie/friendui-sql "0.0.2-SNAPSHOT"]`
 
 Currently very rough. Follow [setup instructions for Friend UI](https://github.com/sveri/friend-ui/) and
@@ -27,7 +29,7 @@ Load the `schema.sql` file from resources into your database. It creates tables 
              :delimiters "`"}
 ```
 
-This library is not yet available on Clojars, so you'll need to clone the repo and `lein install`.
+
 
 See [friendui-sql-example](https://github.com/sventechie/friendui-sql-example) for a working example.
 
