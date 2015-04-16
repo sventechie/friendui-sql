@@ -11,6 +11,8 @@ FirbirdSQL, SQLite3, H2, Vertica and ODBC databases. Pull requests are welcome.
 
 ## Usage
 
+`[sventechie/friendui-sql "0.0.2-SNAPSHOT"]`
+
 Currently very rough. Follow [setup instructions for Friend UI](https://github.com/sveri/friend-ui/) and
 add a [Korma database spec](https://github.com/korma/Korma):
 
