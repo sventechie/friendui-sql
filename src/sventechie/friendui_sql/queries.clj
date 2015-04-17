@@ -77,6 +77,8 @@
   [{:keys [db-conn email_address]}]
   (with-db db-conn
     (select users
+      (with roles)
+      (fields :verified :email_address [:azn_acl_role.name :role])
       (where {:email_address email_address}))))
 
 ;; SELECT azn_account.email_address, azn_acl_role.name AS role
