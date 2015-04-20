@@ -73,7 +73,7 @@
   "Lists all accounts"
   [db-conn]
   (map format-user-map
-    (list-all-accounts-query)))
+    (list-all-accounts-query {:db-conn db-conn})))
 
 (defn get-user-for-activation-id
   "Lookup user by activation ID"
