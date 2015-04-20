@@ -69,16 +69,17 @@
       (with roles)
       (fields :verified :email_address [:azn_acl_role.name :role]))))
 
-;; SELECT *
+;; SELECT azn_account.*, azn_acl_role.name AS role
 ;; FROM azn_account
 ;; WHERE azn_account.email_address = :email_address
+;; JOIN azn_acl_role ON (azn_acl_role.id = azn_account.role_id)
 (defn get-account-by-email-query
   "Find user by email_address"
   [{:keys [db-conn email_address]}]
   (with-db db-conn
     (select users
       (with roles)
-      (fields :verified :email_address [:azn_acl_role.name :role])
+      (fields :verified :email_address :password [:azn_acl_role.name :role])
       (where {:email_address email_address}))))
 
 ;; SELECT azn_account.email_address, azn_acl_role.name AS role

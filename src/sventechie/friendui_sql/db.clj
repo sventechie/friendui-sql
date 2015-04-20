@@ -27,7 +27,7 @@
     {}))
 
 (defn get-usermap-by-username
-  [db-conn email-address & pw]
+  [db-conn email-address & [pw]]
   (when-let [result (get-account-by-email-query {:email_address email-address
                                                  :db-conn db-conn})]
     (let [user-map (format-user-map (first result))]
